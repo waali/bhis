@@ -104,7 +104,7 @@ if(!isset($_SESSION['my_user']))
 				<li><a href="?pg=admin/data_admin">Admin</a></li>
 				<li><a href="?pg=content/data_content">Tentang Kami</a></li>
 				<li><a href="?pg=kontak/data_kontak">Buku Tamu</a></li>
-				<li><a href="?pg=slide/data_slide">Home</a></li>
+				<li><a href="?pg=home/data_home">Home</a></li>
 				<li><a href="logout.php">Keluar</a></li>
 			  </ul>
 			</div>
@@ -124,7 +124,7 @@ if(!isset($_SESSION['my_user']))
 			</div>
 			<div style="clear:both;"></div>
 		</div>
-		<div id="footer">Copyright&copy;Bimbel 'EOC' | <?php echo date('Y'); ?></div>
+		<div id="footer">Copyright&copy;BHIS INTERNATIONAL SCHOOL | <?php echo date('Y'); ?></div>
 	</div>
 </body>
 </html>

@@ -14,6 +14,10 @@ input[name]{height:30px; padding:0;}
 #button{background-color:#09F; border:#F90 1px solid; color:#FFF; height:30px; width:100px; margin:5px;}
 #button:hover{background-color:#0CF;}
 .error {background: red;}
+body {
+	background-color: #03F;
+	background-image: url(image/Picture%20011.jpg);
+}
 </style>
 <form id="form1" name="form1" method="post" action="">
     <table width="244" border="0" align="center">

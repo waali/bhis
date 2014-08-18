@@ -2,8 +2,8 @@
 session_start();
 
 $server	= "localhost";
-$user	= "seto";
-$pass	= "123456";
+$user	= "root";
+$pass	= "";
 $db		= "skripsi_wali";
 
 //Koneksi dan memilih database di server
