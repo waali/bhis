@@ -124,7 +124,7 @@ if(!isset($_SESSION['my_user']))
 			</div>
 			<div style="clear:both;"></div>
 		</div>
-		<div id="footer">Copyright&copy;Bimbel 'EOC' | <?php echo date('Y'); ?></div>
+		<div id="footer">Copyright&copy;BHIS INTERNATIONAL SCHOOL | <?php echo date('Y'); ?></div>
 	</div>
 </body>
 </html>

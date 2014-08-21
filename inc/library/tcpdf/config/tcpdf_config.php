@@ -111,7 +111,7 @@ define ('PDF_HEADER_TITLE', "Bandara Hotel International School");
 /**
  * Header description string.
  */
-define ('PDF_HEADER_STRING', "Jl. Sutera Raya Km. 8 \nAlam Sutera - Serpong .\nwww.bhis.com");
+define ('PDF_HEADER_STRING', "Duta Indah Alpha II Blok E6 Jln Peta Selatan \, Jakarta Barat .\n02129519397 / 081319855546");
 
 /**
  * Document unit of measure [pt=point, mm=millimeter, cm=centimeter, in=inch].

@@ -13,7 +13,16 @@ include 'inc/general.php';
 		<link rel="stylesheet" type="text/css" href="assets/css/ui-lightness/jquery-ui-1.9.2.custom.min.css" />
 		<script type="text/javascript" src="assets/js/jquery-1.8.3.js"></script>
 		<script type="text/javascript" src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-	</head>
+	<style type="text/css">
+<!--
+body {
+	background-color: #900;
+}
+body,td,th {
+	color: #000;
+}
+-->
+</style></head>
 	<body>
 		<div id="templatemo_container">
 			<div id="templatemo_topbar">
@@ -26,8 +35,8 @@ include 'inc/general.php';
 			</div>
 			<div id="templatemo_header">
 				<div id="templatemo_logo">
-					<img src="assets/images/logo.gif" alt="Logo" />
-					<div id="templatemo_sitetitle">BHIS</div>
+				  <img src="assets/images/logo.png" alt="Logo" />
+				  <div id="templatemo_sitetitle"></div>
 				</div>				
 				<div id="templatemo_login">
 					<form method="post" action="index.php?pg=login">
@@ -48,17 +57,15 @@ include 'inc/general.php';
 			</div>			
 			<div id="templatemo_banner">
 				<?php include 'controller/main.php'; ?>
-			</div>
+		  </div>
 			<div id="templatemo_light_blue_row">
-				<div class="templatemo_gallery">
-					<?php echo render_footer_left(); ?>
-				</div>
+			  <div class="templatemo_gallery"><?php echo render_footer_left(); ?></div>
 				<div class="templatemo_partners">
 					<?php echo render_footer_right(); ?>
 				</div>
 			</div>
 			<div id="templatemo_footer">
-				Copyright © <?php echo date('Y'); ?> <a href="#"><strong>BHIS School</strong></a> | Developed by <a href="http://www.twitter.com/WaliSongo" target="_parent">WaliSongo</a>
+				Copyright © <?php echo date('Y'); ?> <a href="#"><strong>BHIS School</strong></a> | Developed by <a href="http://www.twitter.com/Waali Rizqi" target="_parent">Waali Rizqi</a>
 			</div>
 		</div>
 	</body>
