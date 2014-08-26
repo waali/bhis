@@ -1,6 +1,8 @@
-
-  <marquee behavior="alternate" direction="left" scrollamount="5">
-  <h1>Selamat datang di BHIS School </h1>
-  </marquee>
-<h1>&nbsp;</h1>
+<?php
+$data 	= mysql_query("select * from home");
+$no 	= 1;
+$tampil = mysql_fetch_array($data);
+echo '<h1>'.$tampil['judul'].'</h1>';
+echo $tampil['isi'];
+?>
 <div class="more_button"><a href="index.php?pg=pendaftaran">Pendaftaran</a></div>
