@@ -16,7 +16,8 @@ include 'inc/general.php';
 	<style type="text/css">
 <!--
 body {
-	background-color: #900;
+	background-color: #930;
+	background-image: url();
 }
 body,td,th {
 	color: #000;

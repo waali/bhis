@@ -226,7 +226,13 @@ if ($action == '') :
 			}
 		}	
 	}
-	?>
+	?><style type="text/css">
+<!--
+body {
+	background-color: #930;
+}
+-->
+</style>
 	<div class="main_content">
 		<div class="wide_content">
 			<h1>Formulir Pendaftaran BHIS</h1>

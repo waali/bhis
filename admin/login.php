@@ -15,8 +15,8 @@ input[name]{height:30px; padding:0;}
 #button:hover{background-color:#0CF;}
 .error {background: red;}
 body {
-	background-color: #03F;
-	background-image: url(image/Picture%20011.jpg);
+	background-color: #03C;
+	background-image: url(../Images/10322702_1438165476456770_484905134234674308_n.jpg);
 }
 </style>
 <form id="form1" name="form1" method="post" action="">
