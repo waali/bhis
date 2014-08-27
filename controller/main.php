@@ -1,30 +1,9 @@
 <?php
+$pg = isset($_GET['pg']) ? preg_replace('/[^-a-zA-Z0-9_]/', '', $_GET['pg']) : 'home';
 
-$pg = isset($_GET['pg']) ? preg_replace('/[^-a-zA-Z0-9_]/', '', $_GET['pg']) : '';
-
-if ($pg == '')
+if (file_exists('controller/'.$pg.'.php'))
 {
-	include 'controller/home.php';
-}
-elseif ($pg == 'about')
-{
-	include 'controller/about.php';
-}
-elseif ($pg == 'jurusan')
-{
-	include 'controller/jurusan.php';
-}
-elseif ($pg == 'activity')
-{
-	include 'controller/activity.php';
-}
-elseif ($pg == 'pendaftaran')
-{
-	include 'controller/pendaftaran.php';
-}
-elseif ($pg == 'contact')
-{
-	include 'controller/contact.php';
+	include 'controller/'.$pg.'.php';
 }
 else
 {

@@ -82,6 +82,11 @@ if ($action == '') :
 			$err = true;
 			$err_tlp = 'Telepon harus diisi.';
 		}
+		elseif (!is_numeric($_POST['tlp']))
+		{
+			$err 		= true;
+			$err_tlp 	= 'Telepon harus diisi dengan angka.';
+		}
 		else
 		{
 			$tlp = filter_var($_POST['tlp'], FILTER_SANITIZE_NUMBER_INT);

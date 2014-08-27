@@ -1,6 +1,7 @@
 <?php
 include 'inc/config.php';
 include 'inc/general.php';
+include 'inc/redirection.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,16 +14,41 @@ include 'inc/general.php';
 		<link rel="stylesheet" type="text/css" href="assets/css/ui-lightness/jquery-ui-1.9.2.custom.min.css" />
 		<script type="text/javascript" src="assets/js/jquery-1.8.3.js"></script>
 		<script type="text/javascript" src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-	<style type="text/css">
-<!--
-body {
-	background-color: #900;
-}
-body,td,th {
-	color: #000;
-}
--->
-</style></head>
+		<style type="text/css">
+		#templatemo_login {
+			float: right;
+			height: 55px;
+			width: 530px;
+		}
+		#templatemo_login ul {
+			float: right;
+			height: 55px;
+		}
+		#templatemo_login ul li {
+			display: inline;
+		}
+		#templatemo_login ul li a {
+			color: #000;
+			font-size: 1.1em;
+			font-weight: bold;
+			height: 20px;
+			padding: 10px;
+			text-align: center;
+			text-decoration: none;
+		}
+		#templatemo_login ul li a:hover{
+			color: white;
+		}
+		<!--
+		body {
+			background-color: #900;
+		}
+		body,td,th {
+			color: #000;
+		}
+		-->
+		</style>
+	</head>
 	<body>
 		<div id="templatemo_container">
 			<div id="templatemo_topbar">
@@ -35,15 +61,16 @@ body,td,th {
 			</div>
 			<div id="templatemo_header">
 				<div id="templatemo_logo">
-				  <img src="assets/images/logo.png" alt="Logo" />
-				  <div id="templatemo_sitetitle"></div>
+					<img src="assets/images/logo.png" alt="Logo" />
+					<div id="templatemo_sitetitle"></div>
 				</div>				
 				<div id="templatemo_login">
-					<form method="post" action="index.php?pg=login">
-						<label>Email:</label><input class="inputfield" name="email_address" type="text" id="email_address"/>
-						<label>Password:</label><input class="inputfield" name="password" type="password" id="password"/>
-						<input class="button" type="submit" name="Submit" value="Login" />
-					</form>
+					<ul>
+						<li><a href="index.php?pg=siswa&do=login">Login</a></li>
+						<li><a href="index.php?pg=siswa&do=edit">Edit</a></li>
+						<li><a href="index.php?pg=siswa&do=jadwal">Jadwal</a></li>
+						<li><a href="index.php?pg=siswa&do=logout">Logout</a></li>          
+					</ul> 
 				</div>
 			</div>
 			<div id="templatemo_menu">
@@ -57,9 +84,9 @@ body,td,th {
 			</div>			
 			<div id="templatemo_banner">
 				<?php include 'controller/main.php'; ?>
-		  </div>
+			</div>
 			<div id="templatemo_light_blue_row">
-			  <div class="templatemo_gallery"><?php echo render_footer_left(); ?></div>
+				<div class="templatemo_gallery"><?php echo render_footer_left(); ?></div>
 				<div class="templatemo_partners">
 					<?php echo render_footer_right(); ?>
 				</div>
