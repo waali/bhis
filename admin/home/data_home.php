@@ -1,22 +1,32 @@
+<?php
+include 'home/ubah_post_home.php';
+$data 	= mysql_query("SELECT * FROM home");
+$tampil = mysql_fetch_array($data);
+?>
 <h1>Home Page</h1>
-<table width="650" border="1">
-  <tr id="jtabel">
-    <td width="45">No.</td>
-    <td width="90">Nama</td>
-    <td width="145">Isi</td>
-    <td width="198">Aksi</td>
-  </tr>
-  <?php
-  $data 	= mysql_query("select * from home");
-  $no 		= 1;
-  while($tampil = mysql_fetch_array($data)){
-	  
-  ?>
-  <tr>
-    <td valign="top"><?php echo $no++;?></td>
-    <td valign="top"><?php echo $tampil['judul'];?></td>
-    <td valign="top"><?php echo $tampil['isi'];?></td>
-    <td valign="top"><a href="?pg=slide/ubah_slide&id=<?php echo $tampil['id'];?>" class="klik">Ubah</a></td>
-  </tr>
-<?php } ?>
-</table>
+<form action="" method="post" name="form1">
+	<table width="441" border="1" align="center">
+		<tr>
+			<td width="314">Judul</td>
+			<td width="8">:</td>
+			<td width="97">
+				<input type="text" name="judul" id="judul" value="<?php echo $tampil['judul'];?>">
+				<input type="hidden" name="id" value="<?php echo $tampil['id'];?>">
+				<?php echo isset($e_judul) ? '<p class="error-message">'.$e_judul.'</p>' : ''; ?>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">Isi</td>
+			<td valign="top">:</td>
+			<td>
+				<textarea name="isi"><?php echo $tampil['isi']; ?></textarea>
+				<?php echo isset($e_isi) ? '<p class="error-message">'.$e_isi.'</p>' : ''; ?>
+			</td>
+		</tr>
+		<tr>
+			<td height="34">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td><input type="submit" name="button" class="klik" value="Simpan"></td>
+		</tr>
+	</table>
+</form>
