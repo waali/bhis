@@ -21,7 +21,7 @@ include 'ver.php';
 		.error {background: red;}
 		body {
 			background-color: #03F;
-			background-image: url(../Images/10322702_1438165476456770_484905134234674308_n.jpg);
+			background-image: url(../images/10322702_1438165476456770_484905134234674308_n.jpg);
 		}
 		</style>
 	</head>
