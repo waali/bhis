@@ -5,7 +5,7 @@ if(!isset($_SESSION['my_user']))
 {
 ?>
 	<script>
-		alert('Maaf anda harus login terlebih dahulu');
+		alert('Maaf, anda harus login terlebih dahulu.');
 		document.location='login.php';
 	</script>
 <?php

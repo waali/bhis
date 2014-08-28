@@ -11,11 +11,12 @@ include 'ver.php';
 	<head>
 		<title>Login Administrator</title>
 		<style type="text/css">
+		body{font-family:calibri;}
 		form{margin:100px 0 0 0;}
-		table{text-align:center; border-collapse:collapse; border:#09F 1px solid; font-family:calibri;}
-		#judul{background-color:#09F; color:#FFF;font-size:18px;}
+		table{text-align:center; border-collapse:collapse; border:#09F 1px solid; }
+		#judul{background-color:#f90; color:#FFF;font-size:18px;height:40px;}
 		input[name]{height:30px; padding:0;}
-		#button{background-color:#09F; border:#F90 1px solid; color:#FFF; height:30px; width:100px; margin:5px;}
+		#button{background-color:#f90; border:#F90 1px solid; color:#FFF; height:30px; width:100px; margin:5px;}
 		#button:hover{background-color:#0CF;}
 		.error {background: red;}
 		body {
