@@ -102,7 +102,7 @@ input{
 	margin: auto;
 	width: 950px;
 	padding: 0px 10px;
-	background: url(images/mainBG.gif) repeat-y;
+	/*background: url(images/mainBG.gif) repeat-y;*/
 }
 
 #templatemo_topbar {
@@ -170,7 +170,7 @@ input{
 	height: 40px;
 	margin: 0;
 	padding: 0;
-	background: url(images/menuBG.gif) repeat-x;
+	/*background: url(images/menuBG.gif) repeat-x;*/
 }
 
 #templatemo_menu ul {
@@ -203,7 +203,7 @@ input{
 
 #templatemo_menu li a:hover, #templatemo_menu li .current{
 	color: #00F;
-	background: url(images/menuhoverBG.gif) no-repeat;
+	/*background: url(images/menuhoverBG.gif) no-repeat;*/
 }
 /* ----------------- end of menu----------------*/
 
@@ -214,7 +214,7 @@ input{
 	height: auto;
 	padding: 30px 150px 0 50px;
 	margin-bottom: 25px;
-	background: url(images/bannerBG.gif) no-repeat;
+	/*background: url(images/bannerBG.gif) no-repeat;*/
 }
 
 #templatemo_banner h1 {
@@ -238,7 +238,7 @@ input{
 	height: 252px;
 	padding: 10px 15px 10px 15px;
 	margin-right: 50px;
-	background: url(images/boxBG.png) no-repeat;
+	/*background: url(images/boxBG.png) no-repeat;*/
 }
 
 .service_box p{
