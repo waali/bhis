@@ -21,10 +21,10 @@ include 'ver.php';
 		.error {background: red;}
 		body {
 			background-color: #03F;
-			background-image: url(../Images/10322702_1438165476456770_484905134234674308_n.jpg);
+			background-image: url(../images/10322702_1438165476456770_484905134234674308_n.jpg);
 		}
 		</style>
-	</head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
 	<body>
 		<form id="form1" name="form1" method="post" action="">
 			<table width="244" border="0" align="center">

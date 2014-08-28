@@ -46,7 +46,7 @@ include 'inc/redirection.php';
 		}
 		<!--
 		body {
-			background-color: #900;
+	background-color: #FFF;
 		}
 		body,td,th {
 			color: #000;

@@ -234,7 +234,7 @@ if ($action == '') :
 	?><style type="text/css">
 <!--
 body {
-	background-color: #930;
+	background-color: #FFF;
 }
 -->
 </style>

@@ -209,17 +209,17 @@ form {
 	<!--End of left_content-->
     <div class="right_content">
 		<h2>Alamat Kami</h2>
-			<p class="info_contact">Bumi Ps.Kemis Indah Jl. Melati 1 Block E4 No.20 <br>Tangerang - 15810<br>http://www.akparbhis.com</p>
-			<p class="info_contact">Email: cecokay@yahoo.co.id</p>
-			<p class="info_contact">Telp: 0856 9163 3930</p>
+			<p class="info_contact">Duta Indah Alpha II Blok E6 Jln Peta Selatan, Jak-BAR <br>Jakarta - 15810<br>http://www.akparbhis.com</p>
+			<p class="info_contact">Email:info@bhis.com</p>
+			<p class="info_contact">Telp: 02129519397 / 081319855546</p>
 		<div class="employe_box_left">
-			<span class="blue">Mr.awang Setiaji, S.Pd</span><br />
-		<span class="orange">Email:</span>cecokay@gmail.com<br />
-		  <span class="orange">Telp:</span><span class="info_contact">0856 9163 3930</span>
+			<span class="blue">Muhasim SST.Par</span><br />
+		<span class="orange">Email:</span>muhasim@gmail.com<br />
+		  <span class="orange">Telp:</span><span class="info_contact">081319855546</span>
 		</div>
 		<div class="employe_box_right">
-        <span class="blue">Mrs.Niken, S.Pd</span><br />
-	    <span class="orange">Email:</span><span class="info_contact">cecokay@yahoo.id</span><br />
+        <span class="blue">Neneng Hasanah</span><br />
+	    <span class="orange">Email:</span><span class="info_contact">neneng@gmail.com</span><br />
 			<span class="orange">Telp.:</span> 0821 1186 9843<br />
 		</div>
     </div>

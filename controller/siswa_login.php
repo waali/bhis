@@ -83,13 +83,4 @@ if($_POST)
 					</form>
 				</div>
 	<img src="assets/images/image_200x200.gif" alt="project" />
-	<p>
-		This is a free CSS website template provided by <a href="http://www.templatemo.com" target="_parent">TemplateMo.com</a>. Feel free to modify and use this layout for your websites. Lorem ipsum nunc quis sem dolor sit amet, consectetuer adipiscing elit.</p>
-		<p>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc quis sem nec tellus blandit tincidunt. Duis vitae velit sed dui malesuada dignissim. Donec mollis aliquet ligula. Maecenas adipiscing elementum ipsum. Pellentesque vitae magna. Sed nec est. Suspendisse a nibh tristique justo rhoncus volutpat. Suspendisse vitae neque eget ante tristique vestibulum.
-        </p>
-        <ul>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <a href="#">more...</a></li>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <a href="#">more...</a></li>
-        </ul>
-</div>
+	</div>
