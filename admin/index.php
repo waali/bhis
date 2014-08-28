@@ -100,11 +100,14 @@ if(!isset($_SESSION['my_user']))
 			<div id="sidebar">
 			  <ul>
 				  <li><a href="index.php">Beranda</a></li>
-				<li><a href="?pg=pendaftaran/data_pendaftar">Pendaftaran</a></li>
-				<li><a href="?pg=admin/data_admin">Admin</a></li>
-				<li><a href="?pg=content/data_content">Tentang Kami</a></li>
+				<li><a href="?pg=admin/data_admin">Data Admin</a></li>
+				<li><a href="?pg=pendaftaran/data_pendaftar">Data Pendaftaran</a></li>
 				<li><a href="?pg=kontak/data_kontak">Buku Tamu</a></li>
-				<li><a href="?pg=home/data_home">Home</a></li>
+				<li><a href="?pg=home/data_home">Edit Home</a></li>
+				<li><a href="?pg=slide/data_slide">Edit Home Slide</a></li>
+				<li><a href="?pg=content/data_content">Edit Tentang Kami</a></li>
+				<li><a href="?pg=jurusan/data_jurusan">Edit Jurusan</a></li>
+				<li><a href="?pg=kegiatan/data_kegiatan">Edit Kegiatan</a></li>
 				<li><a href="logout.php">Keluar</a></li>
 			  </ul>
 			</div>
