@@ -218,8 +218,8 @@ input{
 }
 
 #templatemo_banner h1 {
-	font-size: 2.5em;
-	margin-bottom: 10px;
+	font-size: 2.em;
+	margin-bottom: 1opx;
 	color:#006
 }
 
