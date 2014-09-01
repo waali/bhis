@@ -1,5 +1,5 @@
 <?php
-var_dump($_SESSION);
+//var_dump($_SESSION);
 function get_detail_siswa($nis)
 {
 	$sql = "SELECT *

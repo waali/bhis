@@ -24,7 +24,7 @@ include 'slide/input_post_slide.php';
 			<td width="50">Gambar</td>
 			<td width="8">:</td>
 			<td width="97">
-				<input name="gambar" type="file" id="gambar" size="40" class="required"/>
+				<input name="gambar" type="file" id="gambar" size="40" class="required"/> <span>618px x 246px</span>
 				<?php echo isset($e_gambar) ? '<p class="error-message">'.$e_gambar.'</p>' : ''; ?>
 			</td>
 		</tr>
@@ -41,7 +41,7 @@ include 'slide/input_post_slide.php';
 			<td>&nbsp;</td>
 			<td>
 				<input type="submit" name="button" class="klik" value="Simpan">
-				<a href="?pg=admin/data_admin" class="klik">Kembali</a>
+				<a href="?pg=slide/data_slide" class="klik">Kembali</a>
 			</td>
 		</tr>
 	</table>

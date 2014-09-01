@@ -224,35 +224,27 @@ if ($action == '') :
 					echo '<script>alert("Sorry, can not upload photo.");</script>';
 				}
 				// send email only if on live server
+				$body_mail = '<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8" /></head><body>
+		<h1>Terimakasih.</h1>
+		<p>Saat ini Anda sudah terdaftar sebagai calon siswa Akpar BHIS. Untuk mengaktivasi akun Anda, segera lakukan pembayaran dengan datang langsung ke kampus Akpar BHIS.</p>
+		<p>Anda sudah bisa masuk ke ruang siswa untuk melihat status pembayaran. Silahkan login menggunakan akun Anda.</p>
+		No Formulir : '.$nomor_formulir.'<br/>
+		Password: '.$tanggal_lahir.'<br/>
+		<p>Silahkan login <a href="http://akparbhis.com/?pg=siswa&do=login">disini</a>.</p>
+		</body>
+		</html>';
+				$headers = "From: admin@akparbhis.com\r\n";
+				$headers .= "Reply-to: admin@akparbhis.com\r\n";
+				$headers .= "Content-type: text/html";
 				if ((isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == 'www.akparbhis.com' || $_SERVER['HTTP_HOST'] == 'akparbhis.com')) || $_SERVER['SERVER_NAME'] == 'www.akparbhis.com' || $_SERVER['SERVER_NAME'] == 'akparbhis.com')
 				{
-					$body = '<html>
-						<head>
-							<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-					</head>
-					<body>
-					<h1>Selamat datang di Akpar BHIS</h1>
-					Terimakasih, Anda sudah melakukan pendaftaran secara online.<br/>
-					Silahkan lakukan pembayaran dengan membawa formulir pendaftaran yang telah di cetak.<br/>
-					Anda bisa mengubah data profil Anda dengan terlebih dahulu login menggunakan informasi di bawah ini:</br>
-					Username: '.$nomor_formulir.'<br>
-					Password: '.$tanggal_lahir.'<br>
-					Silahkan <a href="http://akparbhis.com/index.php?pg=siswa&do=login">login</a><br><br><br><br>
-					Terimakasih.
-					</body>
-					</html>';
-
-					$subject 	= 'Konfirmasi Pendaftaran Akpar BHIS'; 
-					$from 		= 'admin@akparbhis.com'; 
-
-					//$body = '<p style=color:red;>This text should be red</p>';
-
-					ini_set("sendmail_from", $from);
-
-					$headers = "From: " . $from . "\r\nReply-To: " . $from . "\r\n";
-					$headers .= "Content-type: text/html\r\n"; 
-					mail($email, $subject, $body, $headers);
+					$mail_sent = mail($email, "Registrasi Online - Akpar BHIS", $body_mail, $headers);
 				}
+				else
+				{
+					echo '<script>alert("Maaf, saat ini sistem sedang offline. Sistem tidak bisa mengirim informasi login ke email Anda. Mohon cetak formulir Anda dan segera hubungi staf Akpar BHIS. Mohon maaf atas ketidaknyamanan Anda. Terimakasih.");</script><br/>';
+				}
+				
 				// freeup $_POST variables
 				foreach($_POST as $key=>$value)
 				{

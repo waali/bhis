@@ -6,7 +6,7 @@ if ($pg == 'siswa' && ($do == 'login' || $do == 'logout')  && isset($_SESSION['n
 {
 	header('Location: ?pg=siswa');
 }
-if ($pg == 'siswa' && $do == '' && !isset($_SESSION['nis']) )
+if ($pg == 'siswa' && !isset($_SESSION['nis']) && $do != 'login' )
 {
 	header('Location: ?pg=siswa&do=login');
 }

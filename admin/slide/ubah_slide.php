@@ -28,7 +28,7 @@ $tampil = mysql_fetch_array($data);
 			<td width="8" valign="top">:</td>
 			<td width="97">
 				<img src="../images/slide/<?php echo $tampil['gambar']; ?>"  width="160" height="100"/><br/>
-				<input name="gambar" type="file" id="gambar" size="40" />
+				<input name="gambar" type="file" id="gambar" size="40" />  <span>618px x 246px</span>
 				<input name="gambar" type="hidden" value="<?php echo $tampil['gambar']; ?>" id="gambar" size="40" />
 				<?php echo isset($e_gambar) ? '<p class="error-message">'.$e_gambar.'</p>' : ''; ?>
 			</td>

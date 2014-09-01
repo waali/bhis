@@ -72,10 +72,14 @@ include 'inc/redirection.php';
 				</div>				
 				<div id="templatemo_login">
 					<ul>
-						<li><a href="index.php?pg=siswa&do=login">Login</a></li>
+						<li><a href="index.php?pg=siswa&do=profil">Profil</a></li>
 						<li><a href="index.php?pg=siswa&do=edit">Edit</a></li>
 						<li><a href="index.php?pg=siswa&do=jadwal">Jadwal</a></li>
-						<li><a href="index.php?pg=siswa&do=logout">Logout</a></li>          
+						<?php if (isset($_SESSION['nis'])) : ?>
+							<li><a href="index.php?pg=siswa&do=logout">Logout</a></li>
+						<?php else : ?>
+							<li><a href="index.php?pg=siswa&do=login">Login</a></li>
+						<?php endif; ?>
 					</ul> 
 				</div>
 			</div>

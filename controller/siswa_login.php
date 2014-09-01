@@ -71,16 +71,18 @@ if($_POST)
     padding: 25px;
     width: 790px;
 }
+.form-login {
+	float: left;
+	width: 700px;
+}
 </style>
-<h1>Profil Mahasiswa</h1>
+<h1>Login Mahasiswa</h1>
 <div class="templatemo_fullgraybox">
-					
-				<div id="templatemo_login">
-					<form method="post" action="index.php?pg=siswa&do=login">
-						<label>Email:</label><input class="inputfield" name="email_address" type="text" id="email_address"/>
-						<label>Password:</label><input class="inputfield" name="password" type="password" id="password"/>
-						<input class="button" type="submit" name="Submit" value="Login" />
-					</form>
-				</div>
-	<img src="assets/images/image_200x200.gif" alt="project" />
+	<div class="form-login">
+		<form method="post" action="index.php?pg=siswa&do=login">
+			<label>No. Formulir:</label><input class="inputfield" name="nis" type="text" id="nis"/>
+			<label>Password:</label><input class="inputfield" name="password" type="password" id="password"/>
+			<input class="button" type="submit" name="Submit" value="Login" />
+		</form>
 	</div>
+</div>

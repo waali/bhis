@@ -19,7 +19,7 @@ $Q_slide= mysql_query("SELECT * FROM slide");
 		<div id="slider" class="nivoSlider">
 			<?php while ($slide = mysql_fetch_array($Q_slide)) : ?>
 				<?php if ($slide['link'] == '') : ?>
-					<img src="images/slide/<?php echo $slide['gambar']; ?>" alt="" width="100%" alt="<?php echo $slide['judul']; ?>" title="<?php echo $slide['keterangan']; ?>"/>
+					<img src="images/slide/<?php echo $slide['gambar']; ?>" alt="" width="618" height="246" alt="<?php echo $slide['judul']; ?>" title="<?php echo $slide['keterangan']; ?>"/>
 				<?php else : ?>
 					<a href="<?php echo $slide['link']; ?>"><img src="images/slide/<?php echo $slide['gambar']; ?>" alt="<?php echo $slide['judul']; ?>" title="<?php echo $slide['keterangan']; ?>" /></a>
 				<?php endif; ?>
