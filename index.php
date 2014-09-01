@@ -42,11 +42,12 @@ include 'inc/redirection.php';
 			text-decoration: none;
 		}
 		#templatemo_login ul li a:hover{
-			color: white;
+			color: blue;
 		}
 		<!--
 		body {
 	background-color: #FFF;
+	background-image: url(images/gradien%20Linear.jpg);
 		}
 		body,td,th {
 			color: #000;
@@ -88,8 +89,10 @@ include 'inc/redirection.php';
 				</ul>  
 			</div>			
 			<div id="templatemo_banner">
-				<?php include 'controller/main.php'; ?>
-			</div>
+				<p>
+				  <?php include 'controller/main.php'; ?>
+			  </p>
+</div>
 			<div id="templatemo_light_blue_row">
 				<div class="templatemo_gallery"><?php echo render_footer_left(); ?></div>
 				<div class="templatemo_partners">
