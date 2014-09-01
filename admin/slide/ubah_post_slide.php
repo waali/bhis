@@ -14,6 +14,7 @@ if ($_POST)
 	}
 	if (!$error)
 	{
+		$file = $_FILES['gambar']['name'];
 		if(empty($file))
 		{
 			$ubah = mysql_query("UPDATE slide
@@ -26,7 +27,18 @@ if ($_POST)
 		{
 			$tmp_name 		= $_FILES['gambar']['tmp_name'];
 			$name 			= 'slide-'.$_FILES['gambar']['name'];
-			move_uploaded_file($tmp_name, '../images/slide/'.$name);
+			if (move_uploaded_file($tmp_name, '../images/slide/'.$name))
+			{
+				unlink('../images/slide/'.$_POST['gambar']);
+			}
+			else
+			{
+				?>
+				<script type="text/javascript">
+				alert('Kesalahan sistem. Gambar tidak terunggah.');
+				</script>
+				<?php
+			}
 			$ubah = mysql_query("UPDATE slide
 				SET judul = '$_POST[judul]', 
 					gambar = '$name', 
@@ -52,5 +64,6 @@ if ($_POST)
 			</script>
 			<?php
 		}
+		
 	}
 }
