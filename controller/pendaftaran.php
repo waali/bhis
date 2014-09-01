@@ -209,7 +209,7 @@ if ($action == '') :
 		if (!$err)
 		{
 			$nomor_formulir	= 'FORM.'.date('y').'.'.$kode_tingkat.$kelas.'.'.get_no_urut();
-			$success = simpan_formulir($nomor_formulir,$nama,$jenis_kelamin,$kota_lahir,$tanggal_lahir,$agama,$alamat,$tlp,$sekolah,$kelas,$hobi,$cita,$ayah,$ibu,$pekerjaanayah,$pekerjaanibu,$email,$tingkat);
+			$success 		= simpan_formulir($nomor_formulir,$nama,$jenis_kelamin,$kota_lahir,$tanggal_lahir,$agama,$alamat,$tlp,$sekolah,$kelas,$hobi,$cita,$ayah,$ibu,$pekerjaanayah,$pekerjaanibu,$email,$tingkat);
 			if ($success == true)
 			{
 				$uploads_dir 	= './uploads/foto';
@@ -222,6 +222,36 @@ if ($action == '') :
 				else
 				{
 					echo '<script>alert("Sorry, can not upload photo.");</script>';
+				}
+				// send email only if on live server
+				if ((isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == 'www.akparbhis.com' || $_SERVER['HTTP_HOST'] == 'akparbhis.com')) || $_SERVER['SERVER_NAME'] == 'www.akparbhis.com' || $_SERVER['SERVER_NAME'] == 'akparbhis.com')
+				{
+					$body = '<html>
+						<head>
+							<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+					</head>
+					<body>
+					<h1>Selamat datang di Akpar BHIS</h1>
+					Terimakasih, Anda sudah melakukan pendaftaran secara online.<br/>
+					Silahkan lakukan pembayaran dengan membawa formulir pendaftaran yang telah di cetak.<br/>
+					Anda bisa mengubah data profil Anda dengan terlebih dahulu login menggunakan informasi di bawah ini:</br>
+					Username: '.$nomor_formulir.'<br>
+					Password: '.$tanggal_lahir.'<br>
+					Silahkan <a href="http://akparbhis.com/index.php?pg=siswa&do=login">login</a><br><br><br><br>
+					Terimakasih.
+					</body>
+					</html>';
+
+					$subject 	= 'Konfirmasi Pendaftaran Akpar BHIS'; 
+					$from 		= 'admin@akparbhis.com'; 
+
+					//$body = '<p style=color:red;>This text should be red</p>';
+
+					ini_set("sendmail_from", $from);
+
+					$headers = "From: " . $from . "\r\nReply-To: " . $from . "\r\n";
+					$headers .= "Content-type: text/html\r\n"; 
+					mail($email, $subject, $body, $headers);
 				}
 				// freeup $_POST variables
 				foreach($_POST as $key=>$value)
