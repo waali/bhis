@@ -1,6 +1,9 @@
-Sebagai program studi yang bergerak dibidang kepariwisataan, BHIS International memiliki komitmen tinggi dalam mencetak sumber daya manusia pariwisata yang unggul dan berdaya saing tinggi. Komitmen ini tercantum dalam visi nya sebagai “Program Studi Kepariwisataan yang Unggul dalam Pengelolaan dan Pengembangan Resort dan Leisure”.  Visi ini kemudian dijabarkan dalam misi program studi yang mengarah pada pengembangan aspek pendidikan, penelitian dan pengabdian masyarakat, melalui proses pembelajaran yang menyentuh aspek kognitif, afektif dan psikomotorik.
-Industri hospitality sangat terkait dengan aktivitas penyediaan kebutuhan wisatawan selama mereka berada jauh dari tempat tinggalnya.  Kebutuhan akan konsumsi, akomodasi menjadi bagian dari bisnis hospitality yang perlu diberikan kepada wisatawan bukan hanya produk fisiknya saja, tapi juga aspek kenyamanan secara psikologis.  Bagaimana service atau pelayanan itu diberikan dengan keramah tamahan, etika yang baik, bahasa tubuh dan perilaku yang menyenangkan.   Keterkaitan yang erat antara pariwisata dan industry hospitality, menjadikan aspek pendidikan karakter SDM Pariwisata wajib diinisiasi sejak awal perkulihan, terintegrasi dengan kegiatan akademik dan proses pembelajaran.
-Terkait dengan hal tersebut, perumusan  kompetensi bidang kepariwisataan yang diharapkan dari lulusan BHIS International disusun berdasarkan kebutuhan SDM pariwisata dalam industry hospitality. Sesuai dengan yang tercantum dalam Naskah Akademik Program Studi MRL, kompetensi lulusan terdiri dari kompetensi utama, kompetensi  pendukung dan kompetensi lainnya sebagai pelengkap.
-Kompetensi utama adalah kompetensi yang secara mendasar menentukan kemampuan seseorang untuk menampilkan kinerja yang memadai dalam bidang manajemen resort dan leisure. Dengan demikian, kompetensi tersebut harus terukur dalam bentuk kognitif akademik, afektif profesi, dan psikomotor profesional.
-
-
+<?php
+if (isset($_GET['id']))
+{
+	include 'controller/activity_detail.php';
+}
+else
+{
+	include 'controller/activity_index.php';
+}

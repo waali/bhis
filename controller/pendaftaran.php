@@ -1,6 +1,9 @@
 <?php
 include 'inc/function/pendaftaran.php';
 
+require 'inc/library/class.phpmailer.php';
+require 'inc/library/class.smtp.php';
+
 $action = (isset($_GET['action'])) ? $_GET['action'] : '';
 if ($action == '') :
 
@@ -233,18 +236,35 @@ if ($action == '') :
 		<p>Silahkan login <a href="http://akparbhis.com/?pg=siswa&do=login">disini</a>.</p>
 		</body>
 		</html>';
-				$headers = "From: admin@akparbhis.com\r\n";
-				$headers .= "Reply-to: admin@akparbhis.com\r\n";
-				$headers .= "Content-type: text/html";
+				$mail             = new PHPMailer();
+				$mail->IsHTML(true);
+				$mail->Body = $body_mail;
+				$mail->IsSMTP();
+				$mail->SMTPDebug  = 0;
+				$mail->SMTPAuth   = true;
+				//$mail->SMTPSecure  = "ssl"; //Secure conection
+				//$mail->Port        = 465;
+				//$mail->SMTPSecure = "ssl";
+				$mail->Host       = "mail30.propanraya.com";
+				//$mail->Port       = 465;
+				$mail->Username   = "seto.elkahfi@propanraya.com";
+				$mail->Password   = "fr6525";
+				$mail->SetFrom('noreply@akparbhis.com', 'Akpar BHIS');
+				$mail->Subject    = 'Registrasi Online - Akpar BHIS';
+				$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!";
+				$mail->AddAddress($email, $nama);
+				
 				if ((isset($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == 'www.akparbhis.com' || $_SERVER['HTTP_HOST'] == 'akparbhis.com')) || $_SERVER['SERVER_NAME'] == 'www.akparbhis.com' || $_SERVER['SERVER_NAME'] == 'akparbhis.com')
-				{
-					$mail_sent = mail($email, "Registrasi Online - Akpar BHIS", $body_mail, $headers);
+				{					
+					if(!$mail->Send())
+					{
+						echo "Mailer Error: " . $mail->ErrorInfo;
+					}
 				}
 				else
 				{
 					echo '<script>alert("Maaf, saat ini sistem sedang offline. Sistem tidak bisa mengirim informasi login ke email Anda. Mohon cetak formulir Anda dan segera hubungi staf Akpar BHIS. Mohon maaf atas ketidaknyamanan Anda. Terimakasih.");</script><br/>';
-				}
-				
+				}				
 				// freeup $_POST variables
 				foreach($_POST as $key=>$value)
 				{

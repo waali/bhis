@@ -1,9 +1,9 @@
 <?php
-function get_jurusan()
+if (isset($_GET['id']))
 {
-	$sql	= 'SELECT * FROM jurusan';
-	$Q 		= mysql_query($sql);
-	
+	include 'controller/jurusan_detail.php';
 }
-?>
-<h1>Jurusan</h1>
+else
+{
+	include 'controller/jurusan_index.php';
+}

@@ -22,6 +22,7 @@ function render_footer_left()
 						<p>'.$isi.'<a href="index.php?pg=jurusan&id='.$data['id'].'"> detail ...</a></p>
 					</div>';
 	}
+	$html .= '<div class="more_button"><a href="index.php?pg=jurusan">Semua Jurusan</a></div>';
 	return $html;
 }
 
@@ -35,7 +36,7 @@ function render_footer_right()
 		$isi	= substr($data['isi'],0,125);
 		$html 	.= '<div class="gp_row">
 						<img src="images/kegiatan/'.$data['gambar'].'" alt="image" />
-						<p>'.$isi.'<a href="index.php?pg=jurusan&id='.$data['id'].'"> detail ...</a></p>
+						<p>'.$isi.'<a href="index.php?pg=activity&id='.$data['id'].'"> detail ...</a></p>
 					</div>';
 	}
 	$html .= '<div class="more_button"><a href="index.php?pg=activity">Semua Kegiatan</a></div>';

@@ -2,7 +2,7 @@
 //var_dump($_SESSION);
 function do_login($nis, $password)
 {
-	$sql = "SELECT * FROM siswa
+	$sql = "SELECT * FROM formulir
 		WHERE nis = '$nis'
 			AND password = '$password'";
 	$Q = mysql_query($sql);
@@ -35,7 +35,6 @@ if($_POST)
 	{
 		$_POST[$key] = strip_tags($_POST[$key]);
 	}
-	
 	if($_POST['nis'] == '')
 	{
 		$err 		= true;
@@ -55,10 +54,13 @@ if($_POST)
 	{
 		$password = md5($_POST['password']);
 	}
-	
 	if (!$err)
 	{
-		do_login($_POST['nis'], $password);
+		if(do_login($_POST['nis'], $password))
+		{
+		
+		
+		}
 	}
 }
 ?>
