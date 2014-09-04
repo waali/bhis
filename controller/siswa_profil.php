@@ -2,8 +2,10 @@
 //var_dump($_SESSION);
 function get_detail_siswa($nis)
 {
-	$sql = "SELECT *
-		FROM mahasiswa
+	$sql = "SELECT m.*, j.judul AS jurusan, k.nama AS kelas
+		FROM mahasiswa AS m
+			INNER JOIN jurusan AS j ON m.jurusan = j.id
+			INNER JOIN kelas AS k ON m.kelas = k.id
 		WHERE nis = '$nis'";
 	$Q	= mysql_query($sql);
 	return mysql_fetch_assoc($Q);
@@ -32,7 +34,7 @@ table.detal {
 <div class="templatemo_fullgraybox">
 	<table width="100%" border="0" cellspacing="5" cellpadding="5" class="detail">
 		<tr>
-			<td width="20%" rowspan="19" valign="top"><img src="<?php echo $siswa['foto']; ?>" alt="Foto profil" class="profil"/></td>
+			<td width="20%" rowspan="20" valign="top"><img src="<?php echo $siswa['foto']; ?>" alt="Foto profil" class="profil"/></td>
 			<td width="20%" valign="top">Nama Lengkap</td>
 			<td width="2%" align="center" valign="top">:</td>
 			<td width="66%"><?php echo $siswa['nama']; ?></td>
@@ -125,9 +127,14 @@ table.detal {
 			<td><?php echo $siswa['email']; ?></td>
 		</tr>
 		<tr>
-			<td valign="top">Program yang Diambil</td>
+			<td valign="top">Jurusan</td>
 			<td align="center" valign="top">:</td>
-			<td><?php echo ($siswa['kelas'] == 'R') ? 'Reguler' : 'Executive'; ?></td>
+			<td><?php echo $siswa['jurusan']; ?></td>
+		</tr>
+		<tr>
+			<td valign="top">Kelas</td>
+			<td align="center" valign="top">:</td>
+			<td><?php echo $siswa['kelas']; ?></td>
 		</tr>
 	</table>
 </div>
