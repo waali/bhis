@@ -17,8 +17,10 @@ elseif ($pg == 'form')
 	{
 		header('Location: index.php');
 	}
-	$sql = "SELECT * 
-		FROM formulir
+	$sql = "SELECT f.*, k.nama AS kelas, j.judul AS jurusan
+		FROM formulir AS f
+			INNER JOIN kelas AS k ON f.kelas = k.id
+			INNER JOIN jurusan AS j ON f.jurusan = j.id
 		WHERE nomor_formulir = '$no'";
 	//echo $sql;
 	$Q 	= mysql_query($sql);
@@ -122,12 +124,12 @@ elseif ($pg == 'form')
 	$pdf->Cell(50, 0, 'Pekerjaan Ibu', 0, 0, '', 0, '', 0);
 		$pdf->Cell(4, 0, ':', 0, 0, '', 0, '', 0);
 		$pdf->Cell(0, 0, $row['pekerjaanibu'], 0, 1, '', 0, '', 0);
-	
-	$kelas 	= $row['kelas'] == 'R' ? 'Reguler' : 'Executive';
-	
+	$pdf->Cell(50, 0, 'Jurusan', 0, 0, '', 0, '', 0);
+		$pdf->Cell(4, 0, ':', 0, 0, '', 0, '', 0);
+		$pdf->Cell(0, 0, $row['jurusan']  , 0, 1, '', 0, '', 0);
 	$pdf->Cell(50, 0, 'Kelas', 0, 0, '', 0, '', 0);
 		$pdf->Cell(4, 0, ':', 0, 0, '', 0, '', 0);
-		$pdf->Cell(0, 0, $kelas , 0, 1, '', 0, '', 0);
+		$pdf->Cell(0, 0, $row['kelas']  , 0, 1, '', 0, '', 0);
 	$pdf->Cell(50, 0, 'Foto', 0, 0, '', 0, '', 0);
 		$pdf->Cell(4, 0, ':', 0, 0, '', 0, '', 0);
 		$pdf->Image($row['foto'], '', '', 40, 50, '', '', '', false, 300, '', false, false, 1, false, false, false);

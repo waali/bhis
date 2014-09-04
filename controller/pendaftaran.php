@@ -199,6 +199,12 @@ if ($action == '') :
 			$err = true;
 			$err_kelas= 'Setidaknya pilih salah satu kelas.';
 		}
+		$jurusan = isset($_POST['jurusan']) ? $_POST['jurusan'] : '' ;
+		if ($jurusan == '')
+		{
+			$err = true;
+			$err_jurusan= 'Setidaknya pilih salah satu jurusan.';
+		}
 		
 		$tingkat = $_POST['tingkat'];
 		$kode_tingkat = ($tingkat == 'SMA') ? '1' :'2';
@@ -212,7 +218,7 @@ if ($action == '') :
 		if (!$err)
 		{
 			$nomor_formulir	= 'FORM.'.date('y').'.'.$kode_tingkat.$kelas.'.'.get_no_urut();
-			$success 		= simpan_formulir($nomor_formulir,$nama,$jenis_kelamin,$kota_lahir,$tanggal_lahir,$agama,$alamat,$tlp,$sekolah,$kelas,$hobi,$cita,$ayah,$ibu,$pekerjaanayah,$pekerjaanibu,$email,$tingkat);
+			$success 		= simpan_formulir($nomor_formulir,$nama,$jenis_kelamin,$kota_lahir,$tanggal_lahir,$agama,$alamat,$tlp,$sekolah,$jurusan,$kelas,$hobi,$cita,$ayah,$ibu,$pekerjaanayah,$pekerjaanibu,$email,$tingkat);
 			if ($success == true)
 			{
 				$uploads_dir 	= './uploads/foto';
@@ -432,15 +438,30 @@ body {
 						</td>
 					</tr>
 					<tr>
-						<td valign="top">Program yang Diambil</td>
+						<td valign="top">Jurusan yang diambil</td>
 						<td align="center" valign="top">:</td>
 						<td>
+							<?php
+							$Q = mysql_query("SELECT * FROM jurusan");
+							while ($jurusan = mysql_fetch_array($Q)) : ?>
 							<label>
-								<input type="radio" name="kelas" value="R" <?php echo (isset($_POST['kelas']) && $_POST['kelas'] == 'R') ? 'checked' : ''; ?>>Reguler
+								<input type="radio" name="jurusan" value="<?php echo $jurusan['id']; ?>" <?php echo (isset($_POST['jurusan']) && $_POST['jurusan'] == $jurusan['id']) ? 'checked' : ''; ?>><?php echo $jurusan['judul']; ?>
 							</label> <br>
+							<?php endwhile; ?>
+							<?php echo (isset($err_jurusan)) ? '<p class="error">'.$err_jurusan.'</p>' : ''; ?>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top">Kelas</td>
+						<td align="center" valign="top">:</td>
+						<td>
+							<?php
+							$Q = mysql_query("SELECT * FROM kelas");
+							while ($kelas = mysql_fetch_array($Q)) : ?>
 							<label>
-								<input type="radio" name="kelas" value="E" <?php echo (isset($_POST['kelas']) && $_POST['kelas'] == 'E') ? 'checked' : ''; ?>>Executive
-							</label><br>
+								<input type="radio" name="kelas" value="<?php echo $kelas['id']; ?>" <?php echo (isset($_POST['kelas']) && $_POST['kelas'] == $kelas['id']) ? 'checked' : ''; ?>><?php echo $kelas['nama']; ?>
+							</label> <br>
+							<?php endwhile; ?>
 							<?php echo (isset($err_kelas)) ? '<p class="error">'.$err_kelas.'</p>' : ''; ?>
 						</td>
 					</tr>

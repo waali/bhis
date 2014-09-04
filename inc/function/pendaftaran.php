@@ -32,10 +32,10 @@ function get_no_urut()
 	return $no_urut;
 }
 
-function simpan_formulir($nomor_formulir,$nama,$jenis_kelamin,$kota_lahir,$tanggal_lahir,$agama,$alamat,$tlp,$sekolah,$kelas,$hobi,$cita,$ayah,$ibu,$pekerjaanayah,$pekerjaanibu,$email,$tingkat)
+function simpan_formulir($nomor_formulir,$nama,$jenis_kelamin,$kota_lahir,$tanggal_lahir,$agama,$alamat,$tlp,$sekolah,$jurusan,$kelas,$hobi,$cita,$ayah,$ibu,$pekerjaanayah,$pekerjaanibu,$email,$tingkat)
 {
-	$sql = "INSERT INTO formulir(nomor_formulir, nama, jenis_kelamin, kota_lahir, tanggal_lahir, agama, alamat, tlp, sekolah, kelas, hobi, cita, ayah, ibu, pekerjaanayah, pekerjaanibu, email, tingkat)
-	VALUES('$nomor_formulir', '$nama', '$jenis_kelamin', '$kota_lahir', '$tanggal_lahir', '$agama', '$alamat', '$tlp', '$sekolah', '$kelas', '$hobi', '$cita', '$ayah', '$ibu', '$pekerjaanayah', '$pekerjaanibu', '$email', '$tingkat')";
+	$sql = "INSERT INTO formulir(nomor_formulir, nama, jenis_kelamin, kota_lahir, tanggal_lahir, agama, alamat, tlp, sekolah, jurusan, kelas, hobi, cita, ayah, ibu, pekerjaanayah, pekerjaanibu, email, tingkat)
+	VALUES('$nomor_formulir', '$nama', '$jenis_kelamin', '$kota_lahir', '$tanggal_lahir', '$agama', '$alamat', '$tlp', '$sekolah', '$jurusan', '$kelas', '$hobi', '$cita', '$ayah', '$ibu', '$pekerjaanayah', '$pekerjaanibu', '$email', '$tingkat')";
 	
 	return mysql_query($sql) or die(mysql_error());
 }
