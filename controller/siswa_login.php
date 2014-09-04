@@ -1,8 +1,8 @@
 <?php
-//var_dump($_SESSION);
 function do_login($nis, $password)
 {
-	$sql = "SELECT * FROM formulir
+	$sql = "SELECT nis, nama, email
+		FROM mahasiswa
 		WHERE nis = '$nis'
 			AND password = '$password'";
 	$Q = mysql_query($sql);
@@ -11,6 +11,7 @@ function do_login($nis, $password)
 		$data 				= mysql_fetch_assoc($Q);
 		$_SESSION['nis'] 	= $data['nis'];
 		$_SESSION['nama'] 	= $data['nama'];
+		$_SESSION['email'] 	= $data['email'];
 		?>
 		<script>
 		alert('Thanks for logging in.');
@@ -22,7 +23,7 @@ function do_login($nis, $password)
 	{
 		?>
 		<script>
-		alert('Password atau Nis anda salah. Silahkan coba lagi.');
+		alert('Password atau NIS anda salah. Silahkan coba lagi.');
 		</script>
 		<?php
 	}
@@ -82,7 +83,7 @@ if($_POST)
 <div class="templatemo_fullgraybox">
 	<div class="form-login">
 		<form method="post" action="index.php?pg=siswa&do=login">
-			<label>No. Formulir:</label><input class="inputfield" name="nis" type="text" id="nis"/>
+			<label>NIS:</label><input class="inputfield" name="nis" type="text" id="nis"/>
 			<label>Password:</label><input class="inputfield" name="password" type="password" id="password"/>
 			<input class="button" type="submit" name="Submit" value="Login" />
 		</form>
