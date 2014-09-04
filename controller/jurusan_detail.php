@@ -8,7 +8,17 @@ $data 	= mysql_fetch_assoc($Q)
 		<div class="slider-wrapper theme-default">
 			<img src="images/jurusan/<?php echo $data['gambar']; ?>" alt="<?php echo $data['judul']; ?>" title="<?php echo $data['judul']; ?>"/>
 		</div>
-		<?php echo $data['isi']; ?><br/><br/>
+		<?php echo $data['isi']; ?><br/>
+		<h2>Jadwal</h2> <?php echo $data['jadwal']; ?><br/>
 	</div>
 <?php endif; ?>
+<?php
+$Q 		= mysql_query("SELECT * FROM kelas");
+?>
+<div>
+	<?php while ($kelas = mysql_fetch_array($Q)) : ?>
+		<h2><?php echo $kelas['nama']; ?></h2>
+		Jam <?php echo $kelas['jam']; ?><br/>
+	<?php endwhile; ?>
+	</div>
 <div class="more_button"><a href="index.php?pg=jurusan">Kembali</a></div>

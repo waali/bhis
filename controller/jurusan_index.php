@@ -29,6 +29,16 @@ $Q 		= mysql_query("SELECT * FROM jurusan");
 	<?php endwhile; ?>
 	</div>
 <?php endif; ?>
+<?php
+$Q 		= mysql_query("SELECT * FROM kelas");
+?>
+<h1>Kelas</h1>
+<div>
+	<?php while ($kelas = mysql_fetch_array($Q)) : ?>
+		<h2><?php echo $kelas['nama']; ?></h2>
+		Jam <?php echo $kelas['jam']; ?><br/><br/>
+	<?php endwhile; ?>
+	</div>
 <script type="text/javascript">
 $(window).load(function() {
     $('#slider').nivoSlider();
