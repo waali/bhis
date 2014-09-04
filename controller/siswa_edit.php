@@ -20,8 +20,8 @@ function update_siswa($nama, $alamat, $tlp, $email, $password)
 	$sql .= " WHERE nis='".$_SESSION['nis']."'";
 	if (mysql_query($sql) or die(mysql_error()))
 	{
-	//	$_SESSION['nama'] 	= $nama;
-	//	$_SESSION['email'] 	= $email;
+		$_SESSION['nama'] 	= $nama;
+		$_SESSION['email'] 	= $email;
 		return true;
 	}
 	return false;
