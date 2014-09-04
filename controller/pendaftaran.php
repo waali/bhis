@@ -217,7 +217,7 @@ if ($action == '') :
 		
 		if (!$err)
 		{
-			$nomor_formulir	= 'FORM.'.date('y').'.'.$kode_tingkat.$kelas.'.'.get_no_urut();
+			$nomor_formulir	= 'FORM.'.date('y').'.'.$kode_tingkat.$kelas.$jurusan.'.'.get_no_urut();
 			$success 		= simpan_formulir($nomor_formulir,$nama,$jenis_kelamin,$kota_lahir,$tanggal_lahir,$agama,$alamat,$tlp,$sekolah,$jurusan,$kelas,$hobi,$cita,$ayah,$ibu,$pekerjaanayah,$pekerjaanibu,$email,$tingkat);
 			if ($success == true)
 			{
