@@ -1,7 +1,6 @@
 mail.php
 *.pdf
 *.txt
-*.sql
 *.html
 _backup/
 config/koneksi.php
