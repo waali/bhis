@@ -20,7 +20,11 @@
 		<td><?php echo $tampil['username'];?></td>
 		<td><?php echo $tampil['nama'];?></td>
 		<td><?php echo $tampil['email'];?></td>
-		<td><a href="?pg=admin/ubah_admin&id=<?php echo $tampil['username'];?>" class="klik">Ubah</a> <a href="?pg=admin/hapus_admin&id=<?php echo $tampil['username'];?>" class="klik" onclick="return confirm('Data Akan Dihapus?')">Hapus</a></td>
+		<td>
+			<?php if ($tampil['username'] == $_SESSION['my_user'] ) : ?>
+				<a href="?pg=admin/ubah_admin&id=<?php echo $tampil['username'];?>" class="klik">Ubah</a>
+			<?php endif; ?>
+			<a href="?pg=admin/hapus_admin&id=<?php echo $tampil['username'];?>" class="klik" onclick="return confirm('Data Akan Dihapus?')">Hapus</a></td>
 	</tr>
 	<?php } ?>
 </table>
