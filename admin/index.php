@@ -102,6 +102,7 @@ if(!isset($_SESSION['my_user']))
 				  <li><a href="index.php">Beranda</a></li>
 				<li><a href="?pg=admin/data_admin">Data Admin</a></li>
 				<li><a href="?pg=pendaftaran/data_pendaftar">Data Pendaftaran</a></li>
+				<li><a href="?pg=mahasiswa/data_mahasiswa">Data Mahasiswaa</a></li>
 				<li><a href="?pg=kontak/data_kontak">Buku Tamu</a></li>
 				<li><a href="?pg=home/data_home">Home</a></li>
 				<li><a href="?pg=slide/data_slide">Home Slide</a></li>
