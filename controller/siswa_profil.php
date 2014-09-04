@@ -3,7 +3,7 @@
 function get_detail_siswa($nis)
 {
 	$sql = "SELECT *
-		FROM siswa
+		FROM mahasiswa
 		WHERE nis = '$nis'";
 	$Q	= mysql_query($sql);
 	return mysql_fetch_assoc($Q);
@@ -20,17 +20,114 @@ $siswa = get_detail_siswa($_SESSION['nis']);
     padding: 25px;
     width: 790px;
 }
+img.profil {
+	display: block;
+}
+table.detal {
+	display: inline;
+	float: left;
+}
 </style>
 <h1>Profil Mahasiswa</h1>
 <div class="templatemo_fullgraybox">
-	<img src="assets/images/image_200x200.gif" alt="project" />
-	<p>
-		This is a free CSS website template provided by <a href="http://www.templatemo.com" target="_parent">TemplateMo.com</a>. Feel free to modify and use this layout for your websites. Lorem ipsum nunc quis sem dolor sit amet, consectetuer adipiscing elit.</p>
-		<p>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc quis sem nec tellus blandit tincidunt. Duis vitae velit sed dui malesuada dignissim. Donec mollis aliquet ligula. Maecenas adipiscing elementum ipsum. Pellentesque vitae magna. Sed nec est. Suspendisse a nibh tristique justo rhoncus volutpat. Suspendisse vitae neque eget ante tristique vestibulum.
-        </p>
-        <ul>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <a href="#">more...</a></li>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <a href="#">more...</a></li>
-        </ul>
+	<table width="100%" border="0" cellspacing="5" cellpadding="5" class="detail">
+		<tr>
+			<td width="20%" rowspan="19" valign="top"><img src="<?php echo $siswa['foto']; ?>" alt="Foto profil" class="profil"/></td>
+			<td width="20%" valign="top">Nama Lengkap</td>
+			<td width="2%" align="center" valign="top">:</td>
+			<td width="66%"><?php echo $siswa['nama']; ?></td>
+		</tr>
+		<tr>
+			<td>Jenis Kelamin</td>
+			<td align="center">:</td>
+			<td align="left"><?php echo $siswa['jenis_kelamin']; ?></td>
+		</tr>
+		<tr>
+			<td valign="top">Kota kelahiran</td>
+			<td align="center" valign="top">:</td>
+			<td><?php echo $siswa['kota_lahir']; ?></td>
+		</tr>
+		<tr>
+			<td valign="top">Tanggal lahir</td>
+			<td align="center" valign="top">:</td>
+			<td><?php echo $siswa['tanggal_lahir']; ?></td>
+		</tr>
+		<tr>
+			<td valign="top">Agama</td>
+			<td align="center" valign="top">:</td>
+			<td><?php echo $siswa['agama']; ?></td>
+		</tr>
+		<tr>
+						<td valign="top">Alamat</td>
+						<td align="center" valign="top">:</td>
+						<td><?php echo $siswa['alamat']; ?></td>
+		</tr>
+		<tr>
+						<td valign="top">No telp / Hp</td>
+						<td align="center" valign="top">:</td>
+						<td><?php echo $siswa['tlp']; ?></td>
+		</tr>
+		<tr>
+						<td valign="top">Asal Sekolah</td>
+						<td align="center" valign="top">:</td>
+						<td><?php echo $siswa['sekolah']; ?></td>
+		</tr>				
+		<tr>
+						<td width="32%">Tingkat</td>
+						<td width="2%" align="center">:</td>
+						<td width="66%"><?php echo $siswa['tingkat']; ?>
+						</td>
+		</tr>
+		<tr>
+						<td valign="top">Hobi</td>
+						<td align="center" valign="top">:</td>
+						<td><?php echo $siswa['hobi']; ?></td>
+		</tr>
+		<tr>
+						<td valign="top">Cita - cita</td>
+						<td align="center" valign="top">:</td>
+						<td><?php echo $siswa['cita']; ?>
+						</td>
+		</tr>
+		<tr>
+						<td>Nama Orang Tua</td>
+						<td align="center">&nbsp;</td>
+						<td>&nbsp;</td>
+		</tr>
+		<tr>
+						<td valign="top">a. Ayah</td>
+						<td align="center" valign="top">:</td>
+						<td><?php echo $siswa['ayah']; ?></td>
+		</tr>
+		<tr>
+			<td valign="top">b. Ibu</td>
+			<td align="center" valign="top">:</td>
+			<td><?php echo $siswa['ibu']; ?></td>
+		</tr>
+		<tr>
+			<td>Pekerjaan Orang Tua</td>
+			<td align="center">&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">a. Ayah</td>
+			<td align="center" valign="top">:</td>
+			<td><?php echo $siswa['pekerjaanayah']; ?></td>
+		</tr>
+		<tr>
+			<td valign="top">b. Ibu</td>
+			<td align="center" valign="top">:</td>
+			<td><?php echo $siswa['pekerjaanibu']; ?></td>
+		</tr>
+		<tr>
+			<td valign="top"><p>*Email </p></td>
+			<td align="center" valign="top">:</td>
+			<td><?php echo $siswa['email']; ?></td>
+		</tr>
+		<tr>
+			<td valign="top">Program yang Diambil</td>
+			<td align="center" valign="top">:</td>
+			<td><?php echo ($siswa['kelas'] == 'R') ? 'Reguler' : 'Executive'; ?></td>
+		</tr>
+	</table>
 </div>
