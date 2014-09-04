@@ -1,7 +1,7 @@
 <?php
-include 'slide/input_post_slide.php';
+include 'kegiatan/input_post_kegiatan.php';
 ?>
-<h1>Tambah Slide</h1>
+<h1>Tambah Kegiatan</h1>
 <form action="" method="post" enctype="multipart/form-data" name="form1">
 	<table width="441" border="1" align="center">
 		<tr>
@@ -13,10 +13,10 @@ include 'slide/input_post_slide.php';
 			</td>
 		</tr>
 		<tr>
-			<td width="50">Keterangan</td>
+			<td width="50">Isi</td>
 			<td width="8">:</td>
 			<td width="97">
-				<input name="keterangan" type="text" id="keterangan" size="40" value="<?php echo (isset($_POST['keterangan'])) ? $_POST['keterangan'] : ''; ?>" />
+				<input name="keterangan" type="text" id="keterangan" size="40" class="required" value="<?php echo (isset($_POST['keterangan'])) ? $_POST['keterangan'] : ''; ?>" />
 				<?php echo isset($e_keterangan) ? '<p class="error-message">'.$e_keterangan.'</p>' : ''; ?>
 			</td>
 		</tr>
@@ -26,14 +26,6 @@ include 'slide/input_post_slide.php';
 			<td width="97">
 				<input name="gambar" type="file" id="gambar" size="40" class="required"/>
 				<?php echo isset($e_gambar) ? '<p class="error-message">'.$e_gambar.'</p>' : ''; ?>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top">Link</td>
-			<td valign="top">:</td>
-			<td>
-				<input name="link" type="text" id="link" size="40" value="<?php echo (isset($_POST['link'])) ? $_POST['link'] : ''; ?>" />
-				<?php echo isset($e_link) ? '<p class="error-message">'.$e_link.'</p>' : ''; ?>
 			</td>
 		</tr>
 		<tr>

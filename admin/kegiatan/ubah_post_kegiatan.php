@@ -14,24 +14,24 @@ if ($_POST)
 	}
 	if (!$error)
 	{
+		$file 		= $_FILES['gambar']['tmp_name'];
 		if(empty($file))
 		{
-			$ubah = mysql_query("UPDATE slide
+			$ubah = mysql_query("UPDATE kegiatan
 				SET judul = '$_POST[judul]', 
-					keterangan = '$_POST[keterangan]',
-					link = '$_POST[link]'
+					isi = '$_POST[keterangan]'
 				WHERE id = '$_POST[id]'");
 		}
 		else
 		{
 			$tmp_name 		= $_FILES['gambar']['tmp_name'];
-			$name 			= 'slide-'.$_FILES['gambar']['name'];
-			move_uploaded_file($tmp_name, '../images/slide/'.$name);
-			$ubah = mysql_query("UPDATE slide
+			$name 			= 'kegiatan-'.$_FILES['gambar']['name'];
+			move_uploaded_file($tmp_name, '../images/kegiatan/'.$name);
+			unlink('../images/slide/'.$_POST['gambar']);
+			$ubah = mysql_query("UPDATE kegiatan
 				SET judul = '$_POST[judul]', 
 					gambar = '$name', 
-					keterangan = '$_POST[keterangan]',
-					link = '$_POST[link]'
+					isi = '$_POST[keterangan]'
 				WHERE id = '$_POST[id]'");
 		}
 
@@ -39,7 +39,7 @@ if ($_POST)
 		?>
 		<script type="text/javascript">
 			alert('Data Berhasil Diubah');
-			document.location='?pg=slide/data_slide';
+			document.location='?pg=kegiatan/data_kegiatan';
 		</script>
 		<?php
 		}
@@ -48,7 +48,7 @@ if ($_POST)
 			?>
 			<script type="text/javascript">
 			alert('Data Gagal Diubah');
-			document.location='?pg=slide/data_slide';
+			document.location='?pg=kegiatan/data_kegiatan';
 			</script>
 			<?php
 		}

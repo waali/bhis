@@ -1,9 +1,9 @@
 <?php
-include 'slide/ubah_post_slide.php';
-$data 	= mysql_query("SELECT * FROM slide WHERE id = '$_GET[id]'");
+include 'kegiatan/ubah_post_kegiatan.php';
+$data 	= mysql_query("SELECT * FROM kegiatan WHERE id = '$_GET[id]'");
 $tampil = mysql_fetch_array($data);
 ?>
-<h1>Edit Slide</h1>
+<h1>Edit kegiatan</h1>
 <form action="" method="post" enctype="multipart/form-data" name="form1">
 	<table width="441" border="1" align="center">
 		<tr>
@@ -19,7 +19,7 @@ $tampil = mysql_fetch_array($data);
 			<td width="50">Keterangan</td>
 			<td width="8">:</td>
 			<td width="97">
-				<input name="keterangan" type="text" id="keterangan" size="40" value="<?php echo (isset($_POST['keterangan'])) ? $_POST['keterangan'] : $tampil['keterangan']; ?>" />
+				<input name="keterangan" type="text" id="keterangan" size="40" value="<?php echo (isset($_POST['keterangan'])) ? $_POST['keterangan'] : $tampil['isi']; ?>" />
 				<?php echo isset($e_keterangan) ? '<p class="error-message">'.$e_keterangan.'</p>' : ''; ?>
 			</td>
 		</tr>
@@ -27,17 +27,10 @@ $tampil = mysql_fetch_array($data);
 			<td width="50" valign="top">Gambar</td>
 			<td width="8" valign="top">:</td>
 			<td width="97">
-				<img src="../images/slide/<?php echo $tampil['gambar']; ?>"  width="160" height="100"/><br/>
+				<img src="../images/kegiatan/<?php echo $tampil['gambar']; ?>"  width="160" height="100"/><br/>
 				<input name="gambar" type="file" id="gambar" size="40" />
+				<input name="gambar" type="hidden" value="<?php echo $tampil['gambar']; ?>"/>
 				<?php echo isset($e_gambar) ? '<p class="error-message">'.$e_gambar.'</p>' : ''; ?>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top">Link</td>
-			<td valign="top">:</td>
-			<td>
-				<input name="link" type="text" id="link" size="40" value="<?php echo (isset($_POST['link'])) ? $_POST['link'] : $tampil['link']; ?>";/>
-				<?php echo isset($e_link) ? '<p class="error-message">'.$e_link.'</p>' : ''; ?>
 			</td>
 		</tr>
 		<tr>
@@ -45,7 +38,7 @@ $tampil = mysql_fetch_array($data);
 			<td>&nbsp;</td>
 			<td>
 				<input type="submit" name="button" class="klik" value="Simpan">
-				<a href="?pg=slide/data_slide" class="klik">Kembali</a>
+				<a href="?pg=kegiatan/data_kegiatan" class="klik">Kembali</a>
 			</td>
 		</tr>
 	</table>
